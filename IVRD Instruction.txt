@@ -1,0 +1,13 @@
+Example: IVRD H103 D0 D2 H1
+
+H103: Modbus slave communicating is 01, using FC03. So, if Mosbus slave = 2 => H203
+(Read the register 4x0000, if read 3x0000 => H104)
+(D0 for reading the station number (high 8) and the command code (low 8) )
+D0  : The register you want to read. Example: Read register 40001 => D0 = 1
+D2  : Save the value read from D0
+H1  : Number of register read. H1 <=> 1 register (16bits).
+If the value is real, you need to read 2 registers (32 bits) <=> H2
+
+
+Example: Read value TSS sensor
+D0 : Bin: (id = 10)00001010 (FC03)00000011
